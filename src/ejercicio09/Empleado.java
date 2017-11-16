@@ -1,6 +1,6 @@
 package ejercicio09;
 
-import java.util.Comparator;
+
 
 //TODO comentar
 public class Empleado implements Comparable<Empleado>{

@@ -1,0 +1,7 @@
+<libros>
+  <libro>
+    <ISBN>45454546</ISBN>
+    <titulo>titulo</titulo>
+    <editorial>editorial</editorial>
+  </libro>
+</libros>
