@@ -1,8 +1,10 @@
 package ejercicio09;
-
+//TODO comentar
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -10,7 +12,16 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 public class Metodos {
-	public ArrayList<Empleado> getEmpleados() {
+	public static void mostrarSueldoSuperior30000(ArrayList<Empleado>empleados) {
+		System.out.println("Estos son los empleados cuyo sueldo es superior o igual a 30000");
+		Collections.sort(empleados);
+		for (Empleado empleado : empleados) {
+			if(empleado.getSalario()>=30000) {
+				System.out.println(empleado);
+			}
+		}
+	}
+	public static ArrayList<Empleado> getEmpleados() {
 		ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 		try {
 			Empleado empAux = null;
@@ -55,6 +66,8 @@ public class Metodos {
 					case "calle":
 						dirAux.setCalle(reader.getElementText());
 						break;
+					case "departamento":
+						empAux.setDepartamento(reader.getElementText());
 					}//fin switch
 				}//fin if
 				if(event==XMLStreamConstants.END_ELEMENT&&reader.getLocalName().equals("empleado")) {
@@ -66,6 +79,7 @@ public class Metodos {
 			}//fin while
 			
 			reader.close();
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,6 +88,6 @@ public class Metodos {
 			e.printStackTrace();
 		}
 		// TODO
-		return new ArrayList<>();
+		return listaEmpleados;
 	}
 }

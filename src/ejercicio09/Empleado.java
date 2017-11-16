@@ -1,6 +1,9 @@
 package ejercicio09;
 
-public class Empleado {
+import java.util.Comparator;
+
+//TODO comentar
+public class Empleado implements Comparable<Empleado>{
 	private String id;
 	private String nombre;
 	private String apellido;
@@ -75,4 +78,20 @@ public class Empleado {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
+	@Override
+	public int compareTo(Empleado o) {
+		if(this.salario==o.getSalario()) {
+			return 0;
+		}else {
+			if(salario<o.getSalario()) {
+				return -1;
+			}else {
+				return 1;
+			}
+		}
+		
+	}
+
+	
 }
