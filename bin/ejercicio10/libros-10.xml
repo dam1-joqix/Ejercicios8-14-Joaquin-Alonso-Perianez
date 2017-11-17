@@ -1,12 +1,7 @@
-<ejercicio10.ListaLibros>
-  <ejercicio08.Libro>
-    <ISBN>2121211</ISBN>
+<libros>
+  <libro>
+    <ISBN>45454546</ISBN>
     <titulo>titulo</titulo>
     <editorial>editorial</editorial>
-  </ejercicio08.Libro>
-  <ejercicio08.Libro>
-    <ISBN>1454646</ISBN>
-    <titulo>titulo2</titulo>
-    <editorial>editorial</editorial>
-  </ejercicio08.Libro>
-</ejercicio10.ListaLibros>
+  </libro>
+</libros>
