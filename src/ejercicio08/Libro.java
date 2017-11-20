@@ -1,5 +1,4 @@
 package ejercicio08;
-//TODO comentar
 import java.util.ArrayList;
 /**
  * La clase guarda la información de un libro con varios autores

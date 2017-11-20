@@ -1,7 +1,11 @@
 package ejercicio11;
 
 import java.util.ArrayList;
-
+/**
+ * Esta clase guarda la información de un blog (autor y entradas)
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Blog {
 	Autor autor;
 	ArrayList<Entrada> entradas;

@@ -1,5 +1,9 @@
 package ejercicio11;
-
+/**
+ * Esta clase guarda la informacion de un autor
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Autor {
 	String nombre;
 	public Autor() {

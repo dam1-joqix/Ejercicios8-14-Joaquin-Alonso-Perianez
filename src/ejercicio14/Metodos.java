@@ -17,7 +17,18 @@ import com.google.gson.stream.JsonWriter;
 
 import ejercicio08.Libro;
 
+/**
+ * Esta clase guarda los metodos necesarios para la funcionalidad del programa
+ * 
+ * @author alumno
+ *
+ */
 public class Metodos {
+	/**
+	 * Este metodo lee un xml y lo devuelve como lista de objetos libro
+	 * 
+	 * @return
+	 */
 	public static ArrayList<Libro> leerXML() {
 		ArrayList<Libro> lista = new ArrayList<>();
 		Libro lib = null;
@@ -62,7 +73,7 @@ public class Metodos {
 									// libro la lista
 					System.out.println("*Elemento leido");
 				}
-				
+
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("\tArchivo xml no encontrado");
@@ -77,25 +88,30 @@ public class Metodos {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return lista;
 	}
 
+	/**
+	 * Este metodo crea un json a partir de una lista de libros
+	 * 
+	 * @param libros
+	 */
 	public static void crearJSON(ArrayList<Libro> libros) {
 		System.out.println("creando json");
 		JsonWriter writer = null;
 		try {
 			writer = new JsonWriter(new FileWriter("src\\ejercicio14\\libros.json"));
-			Iterator<Libro> itLib=libros.iterator();
+			Iterator<Libro> itLib = libros.iterator();
 			writer.beginArray();
-			while(itLib.hasNext()){
-				Libro lib=itLib.next();
+			while (itLib.hasNext()) {
+				Libro lib = itLib.next();
 				writer.beginObject();
 				writer.name("ISBN").value(lib.getISBN());
 				writer.name("titulo").value(lib.getTitulo());
 				writer.name("autores");
 				writer.beginArray();
-				List<String> autores=lib.getAutores();
+				List<String> autores = lib.getAutores();
 				for (int i = 0; i < autores.size(); i++) {
 					writer.value(autores.get(i));
 				}

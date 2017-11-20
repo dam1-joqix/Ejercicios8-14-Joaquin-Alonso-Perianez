@@ -1,5 +1,9 @@
 package ejercicio11;
-
+/**
+ * Esta clase guarda la información de una entrada (titulo y descripción)
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Entrada {
 	String titulo;
 	String descripcion;

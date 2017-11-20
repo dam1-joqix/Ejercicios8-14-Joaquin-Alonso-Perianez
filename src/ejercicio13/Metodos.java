@@ -9,16 +9,27 @@ import java.io.UnsupportedEncodingException;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
+/**
+ * Esta clase guarda metodos para la funcionalidad del programa
+ * 
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Metodos {
-	public static void leerJson(){
-		FileInputStream fis=null;JsonReader reader=null;
-		Gson gson=new Gson();
+	/**
+	 * Este metodo lee un archivo json y muestra los objetos producto contenidos en
+	 * el por pantalla
+	 */
+	public static void leerJson() {
+		FileInputStream fis = null;
+		JsonReader reader = null;
+		Gson gson = new Gson();
 		try {
-			fis=new FileInputStream("src\\ejercicio13\\productos.json");
-			reader=new JsonReader(new InputStreamReader(fis,"UTF-8"));
+			fis = new FileInputStream("src\\ejercicio13\\productos.json");
+			reader = new JsonReader(new InputStreamReader(fis, "UTF-8"));
 			reader.beginArray();
-			while(reader.hasNext()){
-				Producto producto=gson.fromJson(reader,Producto.class);
+			while (reader.hasNext()) {
+				Producto producto = gson.fromJson(reader, Producto.class);
 				System.out.println(producto);
 			}
 		} catch (FileNotFoundException e) {
@@ -30,7 +41,7 @@ public class Metodos {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				reader.close();
 			} catch (IOException e) {

@@ -1,5 +1,9 @@
 package ejercicio13;
-
+/**
+ * Esta clase guarda los datos de un producto
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Producto {
 	String referencia;
 	String nombre;

@@ -6,7 +6,7 @@ package ejercicio09;
  * @author Joaquin Alonso Perianez
  *
  */
-//TODO comentar
+
 public class Empleado implements Comparable<Empleado>{
 	private String id;
 	private String nombre;

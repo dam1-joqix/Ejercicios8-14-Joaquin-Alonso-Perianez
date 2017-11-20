@@ -2,6 +2,11 @@ package ejercicio10;
 import java.util.Scanner;
 
 public class MetodosGenericos {
+	/**
+	 * Este metodo pide un dato por teclado y lo devuelve como String
+	 * @param tipo
+	 * @return
+	 */
 	public static String pideString(String tipo) {
 		String palabra="";
 		Scanner scan =new Scanner(System.in);
