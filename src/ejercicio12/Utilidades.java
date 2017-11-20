@@ -11,7 +11,7 @@ public class Utilidades {
 		}
 	}
 	public static void serializarAJSON(ArrayList<Libro> lista){
-		Gson prettyGson=GsonBuilder().setPrettyPrinting().create();
+		Gson prettyGson=new GsonBuilder().setPrettyPrinting().create();
 		System.out.println(prettyGson.toJson(lista));
 	}
 }
