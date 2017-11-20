@@ -7,7 +7,11 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-
+/**
+ * La clase guarda metodos para el funcionamiento del programa
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Metodos {
 	/**
 	 * Este método devuelve una lista de objetos tipo libro cuyos datos obtiene de

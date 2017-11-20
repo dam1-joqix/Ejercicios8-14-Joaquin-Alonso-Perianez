@@ -1,7 +1,11 @@
 package ejercicio09;
 
 
-
+/**
+ * Esta clase guarda la informacion de un empleado, implementa comparable para poder ordenarlos por sueldo
+ * @author Joaquin Alonso Perianez
+ *
+ */
 //TODO comentar
 public class Empleado implements Comparable<Empleado>{
 	private String id;

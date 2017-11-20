@@ -1,13 +1,9 @@
-package ejercicio10;
+package ejercicio11;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO
-		Metodos.añadirLibros();
-		Metodos.escribirXML();
 		Metodos.mostrar(Metodos.deserializar());
 
 	}
-
 }

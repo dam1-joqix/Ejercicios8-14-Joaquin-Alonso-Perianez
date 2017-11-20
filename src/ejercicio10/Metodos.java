@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.thoughtworks.xstream.XStream;
@@ -60,6 +61,8 @@ public class Metodos {
 		return (ArrayList<Libro10>) listaDeLibros; //TODO
 	}
 	public static void mostrar(ArrayList<Libro10> lista) {
-		
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println(lista.get(i));
+		}
 	}
 }

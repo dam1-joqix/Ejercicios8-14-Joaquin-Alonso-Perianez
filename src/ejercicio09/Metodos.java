@@ -1,26 +1,44 @@
 package ejercicio09;
-//TODO comentar
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
-
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
+/**
+ * Esta clase guarda los metodos necesarios para la funcionalidad del programa
+ * 
+ * @author Joaquin Alonso Perianez
+ *
+ */
 public class Metodos {
-	public static void mostrarSueldoSuperior30000(ArrayList<Empleado>empleados) {
+	/**
+	 * Este metodo recibe una lista de empleados los ordena por suyeldo y
+	 * muestra solo aquellos cuyo sueldo es mayor que 30000
+	 * 
+	 * @param empleados
+	 *            lista de empleados
+	 */
+	public static void mostrarSueldoSuperior30000(ArrayList<Empleado> empleados) {
 		System.out.println("Estos son los empleados cuyo sueldo es superior o igual a 30000");
 		Collections.sort(empleados);
 		for (Empleado empleado : empleados) {
-			if(empleado.getSalario()>=30000) {
+			if (empleado.getSalario() >= 30000) {
 				System.out.println(empleado);
 			}
 		}
 	}
+
+	/**
+	 * Este metodo lee un xml y lo devuelve como una lista de empleados
+	 * 
+	 * @return lista de empleados
+	 */
 	public static ArrayList<Empleado> getEmpleados() {
 		ArrayList<Empleado> listaEmpleados = new ArrayList<>();
 		try {
@@ -36,7 +54,7 @@ public class Metodos {
 					String nodo = reader.getLocalName();
 					switch (nodo) {
 					case "empleado":
-						empAux=new Empleado();
+						empAux = new Empleado();
 						empAux.setId(reader.getAttributeValue(0));
 						break;
 					case "nombre":
@@ -52,7 +70,7 @@ public class Metodos {
 						empAux.setCargo(reader.getElementText());
 						break;
 					case "direccion":
-						dirAux=new Direccion();
+						dirAux = new Direccion();
 						break;
 					case "ciudad":
 						dirAux.setCiudad(reader.getElementText());
@@ -68,18 +86,18 @@ public class Metodos {
 						break;
 					case "departamento":
 						empAux.setDepartamento(reader.getElementText());
-					}//fin switch
-				}//fin if
-				if(event==XMLStreamConstants.END_ELEMENT&&reader.getLocalName().equals("empleado")) {
+					}// fin switch
+				} // fin if
+				if (event == XMLStreamConstants.END_ELEMENT && reader.getLocalName().equals("empleado")) {
 					listaEmpleados.add(empAux);
 				}
-				if(event==XMLStreamConstants.END_ELEMENT&&reader.getLocalName().equals("direccion")) {
+				if (event == XMLStreamConstants.END_ELEMENT && reader.getLocalName().equals("direccion")) {
 					empAux.setDireccion(dirAux);
 				}
-			}//fin while
-			
+			} // fin while
+
 			reader.close();
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
